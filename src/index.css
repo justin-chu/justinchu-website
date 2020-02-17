@@ -1,0 +1,23 @@
+body {
+  background-color: #33658A;
+  margin: 0;
+}
+.name {
+  font-weight: bold;
+}
+h1, h2, p, ul, li {
+  font-family: sans-serif;
+}
+.content {
+  padding: 20px;
+}
+.content h2 {
+  padding: 0;
+  margin: 0;
+}
+.content li {
+  margin-bottom: 10px;
+}
+.active {
+  font-weight: bold;
+}
