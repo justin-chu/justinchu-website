@@ -3,9 +3,9 @@ import { projectObjects } from "./projectObjects";
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
 import Button from 'react-bootstrap/Button';
+import Anime from 'react-anime';
 
-
-class Projects extends Component {
+class Portfolio extends Component {
   renderIcons = icons => {
     const iconList = icons.map(icon => {
       return <img alt={icon} style={{width:20, height:20, marginRight: 3}} src={require(`../assets/images/${icon}`)} />
@@ -15,18 +15,23 @@ class Projects extends Component {
 
   renderCards = () => {
     return(
-      <CardColumns>
+
+      <CardColumns style={{marginRight: 3}}>
+              <Anime opacity={[0, 1]} translateY={'1em'} delay={(e, i) => i * 100}>
+
         {Object.values(projectObjects).map(project => (
             <Card style={{ height: 220, flex: 1 }}>
               <Card.Header as="p">{this.renderIcons(project.langs)}</Card.Header>
               <Card.Body style={{flex: 1}}>
                 <Card.Title style={{flex: 1}}>{project.title}</Card.Title>
                 <Card.Text style={{flex: 1}}>{project.description}</Card.Text>
-                <Button variant="primary" style={{alignSelf: 'flex-end'}} href={project.link}>Check it out!</Button>
+                <Button variant="primary" style={{marginBottom: 10, marginRight: 10, bottom: 0, position: 'absolute', right: 0}} href={project.link}>Check it out!</Button>
               </Card.Body>
               {/* <Card.Footer as="p">{this.renderIcons(project.langs)}</Card.Footer> */}
             </Card>
         ))}
+              </Anime>
+
       </CardColumns>
     )
   }
@@ -38,4 +43,4 @@ class Projects extends Component {
   }
 }
  
-export default Projects;
+export default Portfolio;

@@ -21,3 +21,13 @@ h1, h2, p, ul, li {
 .active {
   font-weight: bold;
 }
+.footer-container {
+  position:relative;
+}
+.footer {
+  /* position:absolute; */
+  left:0;
+  bottom:0;
+  right:0;
+  align-items: center;
+}
