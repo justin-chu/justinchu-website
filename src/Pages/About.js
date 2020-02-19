@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Anime from 'react-anime';
+import Chart from "react-apexcharts";
+import { chartData } from './chartData';
 
 class About extends Component {
-  constructor(props){
-    super(props)
-    this.state={index: 0, direction: null}
-  }
-
+  
   handleSelect = (selectedIndex, e) => {
     this.setState({index: selectedIndex});
     this.setState({direction: e.direction});
@@ -15,16 +13,37 @@ class About extends Component {
 
   render() {
     return (
-      <Jumbotron class="d-flex justify-content-between">
-        <div style={{marginTop: -20}}>
-          <Anime opacity={[0, 1]} translateY={'1em'} delay={(e, i) => i * 1000}>
-            <h1>Hi! I'm Justin.</h1>
-            <p>
-            I'm a first-year undergraduate student at the University of Toronto studying Computer Science.
-            </p>
-          </Anime>
+      <div>
+        <Jumbotron class="d-flex justify-content-between">
+          <div style={{marginTop: -20}}>
+            <Anime opacity={[0, 1]} translateY={'1em'} delay={(e, i) => i * 1000}>
+              <h1>Hi! I'm Justin.</h1>
+              <p>
+              I'm a first-year undergraduate student at the University of Toronto studying Computer Science.
+              </p>
+            </Anime>
+          </div>
+        </Jumbotron>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <Chart options={chartData.options[0]} series={chartData.series[0]} type="radialBar" height={210} />
+            </div>
+            <div class="col-sm">
+              <Chart options={chartData.options[1]} series={chartData.series[1]} type="radialBar" height={210} />
+            </div>
+            <div class="col-sm">
+              <Chart options={chartData.options[2]} series={chartData.series[2]} type="radialBar" height={210} />
+            </div>
+            <div class="col-sm">
+              <Chart options={chartData.options[3]} series={chartData.series[3]} type="radialBar" height={210} />
+            </div>
+            <div class="col-sm">
+              <Chart options={chartData.options[4]} series={chartData.series[4]} type="radialBar" height={210} />
+            </div>
+          </div>
         </div>
-      </Jumbotron>
+      </div>
     );
   }
 }
