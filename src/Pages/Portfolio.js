@@ -15,22 +15,20 @@ class Portfolio extends Component {
 
   renderCards = () => {
     return(
-      <div style={{marginTop: -16}}>
-      <CardColumns style={{marginRight: 3}}>
+      <CardColumns style={{marginTop: -16}}>
         <Anime opacity={[0, 1]} translateY={'1em'} delay={(e, i) => i * 100}>
           {Object.values(projectObjects).map(project => (
-              <Card style={{ height: 220, flex: 1 }}>
-                <Card.Header as="p">{this.renderIcons(project.langs)}</Card.Header>
-                <Card.Body style={{flex: 1}}>
-                  <Card.Title style={{flex: 1}}>{project.title}</Card.Title>
-                  <Card.Text style={{flex: 1}}>{project.description}</Card.Text>
-                  <Button variant="primary" style={{marginBottom: 10, marginRight: 10, bottom: 0, position: 'absolute', right: 0}} href={project.link}>Check it out!</Button>
-                </Card.Body>
-              </Card>
+                <Card style={{ height: 220, flex: 1 }}>
+                  <Card.Header as="p">{this.renderIcons(project.langs)}</Card.Header>
+                  <Card.Body style={{flex: 1}}>
+                    <Card.Title style={{flex: 1}}>{project.title}</Card.Title>
+                    <Card.Text style={{flex: 1}}>{project.description}</Card.Text>
+                    <Button variant="primary" style={{marginBottom: 10, marginRight: 10, bottom: 0, position: 'absolute', right: 0}} href={project.link}>Check it out!</Button>
+                  </Card.Body>
+                </Card>
           ))}
         </Anime>
       </CardColumns>
-      </div>
     )
   }
 

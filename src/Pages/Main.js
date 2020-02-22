@@ -25,7 +25,7 @@ class Main extends Component {
               <Nav.Link as={NavLink} to="/about">About</Nav.Link>
               <Nav.Link as={NavLink} to="/portfolio">Portfolio</Nav.Link>
               <Nav.Link as={NavLink} to="/resume">Resume</Nav.Link>
-              <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
+              <Nav.Link disabled as={NavLink} to="/contact">Contact</Nav.Link>
             </Nav>
             <a href="mailto: justinj.chu@mail.utoronto.ca" style={{color: 'black'}}><GoMail style={{marginRight: 15, color: ''}} size="2em" /></a>
             <a href="https://github.com/justin-chu" style={{color: 'black'}}><IoLogoGithub style={{marginRight: 15}} size="1.7em" /></a>

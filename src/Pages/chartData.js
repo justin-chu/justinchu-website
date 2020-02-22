@@ -63,6 +63,6 @@ export const chartData = {
         }
       },
     },
-    labels: ['Python'],
+    labels: ['C'],
   }]
 }
