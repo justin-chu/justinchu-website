@@ -18,12 +18,11 @@ h1, h2, p, ul, li {
   font-weight: bold;
 }
 .footer {
-  background-color: grey;
-  position:relative;
-  left:0;
-  bottom:0;
-  right:0;
-}
-.footer-content {
-  flex: 0 0 120px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  justify-content: center;
+  text-align: center;
 }

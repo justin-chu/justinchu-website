@@ -12,6 +12,7 @@ import { GoMail } from 'react-icons/go';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
+
 class Main extends Component {
   render() {
     return (
@@ -24,8 +25,8 @@ class Main extends Component {
             <Nav className="mr-auto">
               <Nav.Link as={NavLink} to="/about">About</Nav.Link>
               <Nav.Link as={NavLink} to="/portfolio">Portfolio</Nav.Link>
-              <Nav.Link as={NavLink} to="/resume">Resume</Nav.Link>
-              <Nav.Link disabled as={NavLink} to="/contact">Contact</Nav.Link>
+              {/*<Nav.Link as={NavLink} to="/resume">Resume</Nav.Link>*/}
+              <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
             </Nav>
             <a href="mailto: justinj.chu@mail.utoronto.ca" style={{color: 'black'}}><GoMail style={{marginRight: 15, color: ''}} size="2em" /></a>
             <a href="https://github.com/justin-chu" style={{color: 'black'}}><IoLogoGithub style={{marginRight: 15}} size="1.7em" /></a>
@@ -38,9 +39,9 @@ class Main extends Component {
           <Route exact path="/resume" component={Resume}/>
           <Route exact path="/contact" component={Contact}/>
         </div>
-        <Navbar bg="light" expand="lg" class="footer">
-          <p class="mx-auto">© Justin Chu 2020</p>
-        </Navbar>
+        <div class="footer">
+          <p class="mt-3">© Justin Chu 2020</p>
+        </div>
       </HashRouter>
     );
   }

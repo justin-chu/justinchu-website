@@ -5,16 +5,10 @@ import Chart from "react-apexcharts";
 import { chartData } from './chartData';
 
 class About extends Component {
-  
-  handleSelect = (selectedIndex, e) => {
-    this.setState({index: selectedIndex});
-    this.setState({direction: e.direction});
-  };
-
   render() {
     return (
       <div>
-        <Jumbotron class="d-flex justify-content-between">
+        <Jumbotron style={{marginRight: 11}} class="d-flex justify-content-between">
           <div style={{marginTop: -20}}>
             <Anime opacity={[0, 1]} translateY={'1em'} delay={(e, i) => i * 1000}>
               <h1>Hi! I'm Justin.</h1>
