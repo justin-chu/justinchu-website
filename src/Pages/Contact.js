@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+import axios from 'axios';
+
+const API_PATH = 'http://http://localhost:3000/src/index.php';
+
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -9,16 +13,33 @@ class Contact extends Component {
       name: '',
       email: '',
       subject: '',
-      message: ''
+      message: '',
+      sent: false,
+      buttonText: 'Send Email',
+      error: ''
     };
   }
-  resetForm(){
-    this.setState({name: '', email: '', subject: '', message: ''});
- }
 
-  handleSubmit(event) {
-    console.log(this.state);
-    this.resetForm();
+  resetForm(){
+    this.setState({name: '', email: '', subject: '', message: '', buttonText: 'Send Email'});
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({buttonText: 'Sending...'})
+    axios({
+      method: 'post',
+      url: `${API_PATH}`,
+      headers: { 'content-type': 'application/json' },
+      data: this.state
+    })
+      .then(result => {
+        this.setState({
+          sent: result.data.sent
+        })
+        this.resetForm()
+      })
+      .catch(error => this.setState({ error: error.message, buttonText: 'Sorry, an error occured.' }));
   }
 
   render() {
@@ -42,7 +63,7 @@ class Contact extends Component {
           <Form.Control placeholder="Message" style={{marginBottom: 10}} value={this.state.message}
             onChange={(text) => {this.setState({message: text.target.value})}} as="textarea" rows="5" />
           <div class="text-center">
-            <Button onClick={this.handleSubmit.bind(this)} type="submit">Submit</Button>
+            <Button onClick={this.handleSubmit.bind(this)} type="submit">{this.state.buttonText}</Button>
           </div>
         </Form>
 
