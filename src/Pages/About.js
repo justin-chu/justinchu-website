@@ -26,21 +26,11 @@ class About extends Component {
         </Jumbotron>
         <div class="container">
           <div class="row">
+          {Object.values(chartData.options).map((chart, index) => (
             <div class="col-sm">
-              <Chart options={chartData.options[0]} series={chartData.series[0]} type="radialBar" height={210} />
+              <Chart options={chart} series={chartData.series[index]} type="radialBar" height={210} />
             </div>
-            <div class="col-sm">
-              <Chart options={chartData.options[1]} series={chartData.series[1]} type="radialBar" height={210} />
-            </div>
-            <div class="col-sm">
-              <Chart options={chartData.options[2]} series={chartData.series[2]} type="radialBar" height={210} />
-            </div>
-            <div class="col-sm">
-              <Chart options={chartData.options[3]} series={chartData.series[3]} type="radialBar" height={210} />
-            </div>
-            <div class="col-sm">
-              <Chart options={chartData.options[4]} series={chartData.series[4]} type="radialBar" height={210} />
-            </div>
+          ))}
           </div>
         </div>
       </div>
