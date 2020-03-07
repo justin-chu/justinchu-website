@@ -38,42 +38,27 @@ class Contact extends Component {
     e.preventDefault();
   };
 
-  // async handleSubmit(e) {
-  //   e.preventDefault()
-  //   this.setState({buttonText: 'Sending...'})
-    
-  //   axios.post('https://jsonplaceholder.typicode.com/posts', ['asd', 'asd', 'asd'])
-  //   .then((res)=>{console.log(res)})
-  //   .catch((err)=>{console.log(err)})
-
-  //   // axios({
-  //   //   method: "POST", 
-  //   //   url:"/send", 
-  //   //   data: {
-  //   //   name: this.state.name,
-  //   //   email: this.state.email,
-  //   //   subject: this.state.subject,
-  //   //   message: this.state.message
-  //   //   }
-  //   //   }).then((response)=>{
-  //   //       if (response.data.msg === 'success'){
-  //   //           alert("Email sent, awesome!"); 
-  //   //           this.resetForm()
-  //   //       }else if(response.data.msg === 'fail'){
-  //   //           alert("Oops, something went wrong. Try again")
-  //   //       }
-  //   //   })
-  //   //   .catch((error) => {
-  //   //     console.log(error.response)
-  //   //   })
-  // }
-
   render() {
     return (
       <div class="pl-5 pr-5 mt-5 mb-5">
-        
+
         <h3 class="text-center mb-3">Email me!</h3>
-        <Form>
+
+        <form name="contact" method="POST" data-netlify="true">
+       
+        <div class="col">
+      <input type="text" class="form-control" placeholder="First name">
+    </input></div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Last name">
+    </input>
+  </div>
+  <input type="text" class="form-control" placeholder="Subject"></input>
+          <textarea name="message"></textarea>
+          <button type="submit">Send</button>
+
+        </form>
+        {/* <Form>
           <Form.Row>
             <div class="col-sm w-100">
               <Form.Control placeholder="Name" style={{marginBottom: 10}} value={this.state.name}
@@ -91,7 +76,7 @@ class Contact extends Component {
           <div class="text-center">
             <Button onClick={this.handleSubmit.bind(this)} type="submit">{this.state.buttonText}</Button>
           </div>
-        </Form>
+        </Form> */}
 
       </div>
     );
