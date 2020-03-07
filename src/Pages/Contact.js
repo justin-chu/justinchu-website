@@ -44,7 +44,7 @@ class Contact extends Component {
 
         <h3 class="text-center mb-3">Email me!</h3>
 
-        <form name="contact" action="POST" method="POST" data-netlify="true" netlify>
+        <form name="contact" method="POST" data-netlify="true" netlify>
        
         <div class="col">
       <input type="text" name="name" class="form-control" placeholder="Name">
