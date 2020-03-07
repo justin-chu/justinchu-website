@@ -45,7 +45,7 @@ class Contact extends Component {
 
         <h3 class="text-center mb-3">Email me!</h3>
 
-        <form onSubmit={this.handleSubmit}>
+        {/* <form onSubmit={this.handleSubmit}>
        
         <div class="col">
       <input type="text" name="name" id="name" class="form-control" placeholder="Name">
@@ -58,8 +58,8 @@ class Contact extends Component {
           <textarea name="message" id="message"></textarea>
           <button type="submit">Send</button>
 
-        </form>
-        {/* <Form>
+        </form> */}
+        <Form>
           <Form.Row>
             <div class="col-sm w-100">
               <Form.Control placeholder="Name" style={{marginBottom: 10}} value={this.state.name}
@@ -77,7 +77,7 @@ class Contact extends Component {
           <div class="text-center">
             <Button onClick={this.handleSubmit.bind(this)} type="submit">{this.state.buttonText}</Button>
           </div>
-        </Form> */}
+        </Form>
 
       </div>
     );
