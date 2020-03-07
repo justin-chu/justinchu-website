@@ -8,7 +8,6 @@ import Favicon from 'react-favicon';
 import icon from './assets/images/favicon.ico';
 
 
-
 ReactDOM.render(
   <div>
     <Favicon url={icon} />

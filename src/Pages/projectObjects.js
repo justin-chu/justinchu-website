@@ -1,9 +1,9 @@
 export const projectObjects = {
   project1: {
     title: "This website",
-    langs: ['react-native.svg', 'bootstrap.svg'],
+    langs: ['react-native.svg', 'nodejs.svg', 'bootstrap.svg'],
     description: "A personal website built using React and Bootstrap",
-    link: "https://github.com/shangar21/harvest"
+    link: "https://justinchu.tech"
   },
   project2: {
     title: "Harvest",

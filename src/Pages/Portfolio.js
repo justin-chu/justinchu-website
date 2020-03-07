@@ -8,13 +8,14 @@ import Anime from 'react-anime';
 class Portfolio extends Component {
   renderIcons = icons => {
     const iconList = icons.map(icon => {
-      return <img alt={icon} style={{width:20, height:20, marginRight: 3}} src={require(`../assets/images/${icon}`)} />
+      return <img alt={icon} style={{width:20, height:20, marginRight: 5}} src={require(`../assets/images/${icon}`)} />
     })
     return iconList
   }
 
   renderCards = () => {
     return(
+      <div style={{paddingBottom: 70}}>
       <CardColumns style={{marginTop: -16}}>
         <Anime opacity={[0, 1]} translateY={'1em'} delay={(e, i) => i * 100}>
           {Object.values(projectObjects).map(project => (
@@ -29,6 +30,7 @@ class Portfolio extends Component {
           ))}
         </Anime>
       </CardColumns>
+      </div>
     )
   }
 
