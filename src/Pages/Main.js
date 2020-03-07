@@ -14,25 +14,6 @@ import Nav from 'react-bootstrap/Nav';
 
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { width: 0, height: 0 };
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-  }
-  
-  componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
-  }
-  
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-  }
-  
-  updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
-  }
-
   render() {
     return (
       <HashRouter className="body">
@@ -58,9 +39,24 @@ class Main extends Component {
           <Route exact path="/resume" component={Resume}/>
           <Route exact path="/contact" component={Contact}/>
         </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 
-        <div class="footer" style={this.state.height/this.state.width > 1 ? {top: this.state.height/4} : {bottom: -14}}>
-          <p>© Justin Chu 2020</p>
+        <div class="footer" style={this.state.height/this.state.width > 1 ? {top: this.state.height/4} : {bottom: -9}}>
+          <p class="mt-2">© Justin Chu 2020</p>
+=======
+        <div class="footer">
+          <p class="mt-3">© Justin Chu 2020</p>
+>>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
+=======
+        <div class="footer">
+          <p class="mt-3">© Justin Chu 2020</p>
+>>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
+=======
+        <div class="footer">
+          <p class="mt-3">© Justin Chu 2020</p>
+>>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
         </div>
       </HashRouter>
     );

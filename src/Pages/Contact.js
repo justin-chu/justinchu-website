@@ -2,10 +2,21 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-import axios from 'axios';
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
 
-const API_PATH = 'http://http://localhost:3000/src/index.php';
-
+=======
+>>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
+=======
+>>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
+=======
+>>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -13,34 +24,92 @@ class Contact extends Component {
       name: '',
       email: '',
       subject: '',
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
       message: '',
       sent: false,
       buttonText: 'Send Email',
       error: ''
+    }
+  }
+  
+  resetForm(){
+    this.setState({name: '', email: '', subject: '', message: '', buttonText: 'Send Email'})
+  }
+
+  handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
+
+  // async handleSubmit(e) {
+  //   e.preventDefault()
+  //   this.setState({buttonText: 'Sending...'})
+    
+  //   axios.post('https://jsonplaceholder.typicode.com/posts', ['asd', 'asd', 'asd'])
+  //   .then((res)=>{console.log(res)})
+  //   .catch((err)=>{console.log(err)})
+
+  //   // axios({
+  //   //   method: "POST", 
+  //   //   url:"/send", 
+  //   //   data: {
+  //   //   name: this.state.name,
+  //   //   email: this.state.email,
+  //   //   subject: this.state.subject,
+  //   //   message: this.state.message
+  //   //   }
+  //   //   }).then((response)=>{
+  //   //       if (response.data.msg === 'success'){
+  //   //           alert("Email sent, awesome!"); 
+  //   //           this.resetForm()
+  //   //       }else if(response.data.msg === 'fail'){
+  //   //           alert("Oops, something went wrong. Try again")
+  //   //       }
+  //   //   })
+  //   //   .catch((error) => {
+  //   //     console.log(error.response)
+  //   //   })
+  // }
+=======
+      message: ''
     };
   }
-
   resetForm(){
-    this.setState({name: '', email: '', subject: '', message: '', buttonText: 'Send Email'});
-  }
+    this.setState({name: '', email: '', subject: '', message: ''});
+ }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.setState({buttonText: 'Sending...'})
-    axios({
-      method: 'post',
-      url: `${API_PATH}`,
-      headers: { 'content-type': 'application/json' },
-      data: this.state
-    })
-      .then(result => {
-        this.setState({
-          sent: result.data.sent
-        })
-        this.resetForm()
-      })
-      .catch(error => this.setState({ error: error.message, buttonText: 'Sorry, an error occured.' }));
+=======
+      message: ''
+    };
   }
+  resetForm(){
+    this.setState({name: '', email: '', subject: '', message: ''});
+ }
+
+>>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
+=======
+      message: ''
+    };
+  }
+  resetForm(){
+    this.setState({name: '', email: '', subject: '', message: ''});
+ }
+
+>>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
+  handleSubmit(event) {
+    console.log(this.state);
+    this.resetForm();
+  }
+>>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
 
   render() {
     return (
@@ -63,7 +132,7 @@ class Contact extends Component {
           <Form.Control placeholder="Message" style={{marginBottom: 10}} value={this.state.message}
             onChange={(text) => {this.setState({message: text.target.value})}} as="textarea" rows="5" />
           <div class="text-center">
-            <Button onClick={this.handleSubmit.bind(this)} type="submit">{this.state.buttonText}</Button>
+            <Button onClick={this.handleSubmit.bind(this)} type="submit">Submit</Button>
           </div>
         </Form>
 

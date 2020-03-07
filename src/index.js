@@ -4,8 +4,15 @@ import Main from "./Pages/Main";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Favicon from 'react-favicon';
+import icon from './assets/images/favicon.ico';
+
+
 
 ReactDOM.render(
-  <Main/>, 
+  <div>
+    <Favicon url={icon} />
+    <Main/>
+  </div>, 
   document.getElementById("root")
 );

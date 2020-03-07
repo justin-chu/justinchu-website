@@ -18,11 +18,11 @@ h1, h2, p, ul, li {
   font-weight: bold;
 }
 .footer {
-  position: relative;
-  display:inline-block;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: #f8f9fa;
+  justify-content: center;
   text-align: center;
 }
