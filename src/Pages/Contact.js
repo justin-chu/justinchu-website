@@ -2,21 +2,12 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 const encode = (data) => {
   return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&");
 }
 
-=======
->>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
-=======
->>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
-=======
->>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -24,9 +15,6 @@ class Contact extends Component {
       name: '',
       email: '',
       subject: '',
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
       message: '',
       sent: false,
       buttonText: 'Send Email',
@@ -79,37 +67,6 @@ class Contact extends Component {
   //   //     console.log(error.response)
   //   //   })
   // }
-=======
-      message: ''
-    };
-  }
-  resetForm(){
-    this.setState({name: '', email: '', subject: '', message: ''});
- }
-
-=======
-      message: ''
-    };
-  }
-  resetForm(){
-    this.setState({name: '', email: '', subject: '', message: ''});
- }
-
->>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
-=======
-      message: ''
-    };
-  }
-  resetForm(){
-    this.setState({name: '', email: '', subject: '', message: ''});
- }
-
->>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
-  handleSubmit(event) {
-    console.log(this.state);
-    this.resetForm();
-  }
->>>>>>> parent of 593bbd9... Added dependencies and improved scaleability
 
   render() {
     return (
@@ -132,7 +89,7 @@ class Contact extends Component {
           <Form.Control placeholder="Message" style={{marginBottom: 10}} value={this.state.message}
             onChange={(text) => {this.setState({message: text.target.value})}} as="textarea" rows="5" />
           <div class="text-center">
-            <Button onClick={this.handleSubmit.bind(this)} type="submit">Submit</Button>
+            <Button onClick={this.handleSubmit.bind(this)} type="submit">{this.state.buttonText}</Button>
           </div>
         </Form>
 
