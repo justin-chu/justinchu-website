@@ -27,6 +27,7 @@ class Contact extends Component {
   }
 
   handleSubmit = e => {
+    console.log('eres')
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -44,7 +45,7 @@ class Contact extends Component {
 
         <h3 class="text-center mb-3">Email me!</h3>
 
-        <form name="contact-form" method="post" data-netlify="true" netlify>
+        <form onSubmit={this.handleSubmit}>
        
         <div class="col">
       <input type="text" name="name" id="name" class="form-control" placeholder="Name">
