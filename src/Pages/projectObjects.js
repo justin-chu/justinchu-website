@@ -7,7 +7,7 @@ export const projectObjects = {
   },
   project2: {
     title: "Harvest",
-    langs: ['react-native.svg'],
+    langs: ['react-native.svg', 'nodejs.svg'],
     description: "Hack the Valley 4 Winner of Blockstack's Best Blockstack API Hack",
     link: "https://github.com/shangar21/harvest"
   },
