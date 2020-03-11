@@ -14,24 +14,24 @@ import Nav from 'react-bootstrap/Nav';
 
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { width: 0, height: 0 };
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { width: 0, height: 0 };
+  //   this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  // }
   
-  componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
-  }
+  // componentDidMount() {
+  //   this.updateWindowDimensions();
+  //   window.addEventListener('resize', this.updateWindowDimensions);
+  // }
   
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('resize', this.updateWindowDimensions);
+  // }
   
-  updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
-  }
+  // updateWindowDimensions() {
+  //   this.setState({ width: window.innerWidth, height: window.innerHeight });
+  // }
 
   render() {
     return (
@@ -59,8 +59,8 @@ class Main extends Component {
           <Route exact path="/contact" component={Contact}/>
         </div>
 
-        <div class="footer" style={this.state.height/this.state.width > 1 ? {top: this.state.height/4} : {bottom: -9}}>
-          <p class="mt-2">© Justin Chu 2020</p>
+        <div class="footer"> {/*style={this.state.height/this.state.width > 1 ? {top: this.state.height/4} : {bottom: -9}}>*/}
+          <p style={{margin: 'auto'}}>© Justin Chu 2020</p>
         </div>
       </HashRouter>
     );

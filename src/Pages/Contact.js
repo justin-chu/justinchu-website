@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 
 const encode = (data) => {
@@ -18,29 +19,36 @@ class Contact extends Component {
       message: '',
       sent: false,
       buttonText: 'Send Email',
-      colour: 'primary'
+      colour: 'primary',
+      show: false
     }
   }
 
   handleSubmit = e => {
-    this.setState({buttonText: 'Sending...', colour: 'secondary'})
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state })
-    })
-      .then(() => this.setState({buttonText: 'Sent!', name: '', email: '', subject: '', message: '', colour: 'success'}))
-      .catch(error => alert(error));
+    if(this.state.name === '' || this.state.email === '') {
+      this.setState({show: true})
+      setTimeout(()=>{this.setState({show: false})}, 3000);
+    }
+    else{
+      this.setState({buttonText: 'Sending...', colour: 'secondary'})
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...this.state })
+      })
+        .then(() => this.setState({buttonText: 'Sent!', name: '', email: '', subject: '', message: '', colour: 'success'}))
+        .catch(() => this.setState({buttonText: 'Error!', colour: 'danger'}));
 
-    e.preventDefault();
-    setTimeout(()=>{this.setState({buttonText: 'Send Email', colour: 'primary'})}, 3000);
-  };
+      e.preventDefault();
+      setTimeout(()=>{this.setState({buttonText: 'Send Email', colour: 'primary'})}, 3000);
+    }
+  }
 
   render() {
     return (
       <div class="pl-5 pr-5 mt-5 mb-5">
 
-        <h3 class="text-center mb-3">Email me!</h3>
+        <h3 class="text-center mb-3">Contact me!</h3>
         <Form>
           <Form.Row>
             <div class="col-sm w-100">
@@ -60,6 +68,10 @@ class Contact extends Component {
             <Button variant={this.state.colour} onClick={this.handleSubmit.bind(this)} type="submit">{this.state.buttonText}</Button>
           </div>
         </Form>
+
+        <Alert show={this.state.show} style={{marginTop: 20}} variant="danger">
+          Please enter both your name and email!
+        </Alert>
 
       </div>
     );

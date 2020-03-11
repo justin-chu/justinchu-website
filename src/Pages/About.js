@@ -22,7 +22,8 @@ class About extends Component {
           <div class="row">
           {Object.values(chartData.options).map((chart, index) => (
             <div class="col-sm">
-              <Chart options={chart} series={chartData.series[index]} type="radialBar" height={210} />
+              {/* width: ~992 before it becomes unresponsive I think */}
+              <Chart options={chart} series={chartData.series[index]} type="radialBar" height={225} />
             </div>
           ))}
           </div>
