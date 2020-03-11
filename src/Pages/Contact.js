@@ -27,7 +27,6 @@ class Contact extends Component {
   }
 
   handleSubmit = e => {
-    console.log('eres')
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -62,17 +61,17 @@ class Contact extends Component {
         <Form>
           <Form.Row>
             <div class="col-sm w-100">
-              <Form.Control placeholder="Name" style={{marginBottom: 10}} value={this.state.name}
+              <Form.Control placeholder="Name" name="name" style={{marginBottom: 10}} value={this.state.name}
                 onChange={(text) => {this.setState({name: text.target.value})}} />
             </div>
             <div class="col-sm w-100">
-              <Form.Control placeholder="Email" style={{marginBottom: 10}} value={this.state.email}
+              <Form.Control placeholder="Email" name="email" style={{marginBottom: 10}} value={this.state.email}
                 onChange={(text) => {this.setState({email: text.target.value})}} />
             </div>
           </Form.Row>
-          <Form.Control placeholder="Subject" style={{marginBottom: 10}} value={this.state.subject}
+          <Form.Control placeholder="Subject" name="subject" style={{marginBottom: 10}} value={this.state.subject}
             onChange={(text) => {this.setState({subject: text.target.value})}} />
-          <Form.Control placeholder="Message" style={{marginBottom: 10}} value={this.state.message}
+          <Form.Control placeholder="Message" name="message" style={{marginBottom: 10}} value={this.state.message}
             onChange={(text) => {this.setState({message: text.target.value})}} as="textarea" rows="5" />
           <div class="text-center">
             <Button onClick={this.handleSubmit.bind(this)} type="submit">{this.state.buttonText}</Button>
