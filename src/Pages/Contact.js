@@ -39,9 +39,9 @@ class Contact extends Component {
         .then(() => this.setState({buttonText: 'Sent!', name: '', email: '', subject: '', message: '', colour: 'success'}))
         .catch(() => this.setState({buttonText: 'Error!', colour: 'danger'}));
 
-      e.preventDefault();
       setTimeout(()=>{this.setState({buttonText: 'Send Email', colour: 'primary'})}, 3000);
     }
+    e.preventDefault();
   }
 
   render() {

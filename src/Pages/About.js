@@ -18,6 +18,8 @@ class About extends Component {
             </Anime>
           </div>
         </Jumbotron>
+        
+        {/* <h3 class="mb-3 text-center">My skills include:</h3> */}
         <div class="container">
           <div class="row">
           {Object.values(chartData.options).map((chart, index) => (
