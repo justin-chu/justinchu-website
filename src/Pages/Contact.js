@@ -50,20 +50,20 @@ class Contact extends Component {
 
         <h3 class="text-center mb-3">Contact me!</h3>
         <Form>
-          <Form.Row>
-            <div class="col-sm w-100">
+          <Form.Row /*style={{maxWidth: "990px", margin: "auto"}}*/>
+            <div class="col-sm">
               <Form.Control placeholder="Name" name="name" style={{marginBottom: 10}} value={this.state.name}
                 onChange={(text) => {this.setState({name: text.target.value})}} />
             </div>
-            <div class="col-sm w-100">
+            <div class="col-sm">
               <Form.Control placeholder="Email" name="email" style={{marginBottom: 10}} value={this.state.email}
                 onChange={(text) => {this.setState({email: text.target.value})}} />
             </div>
           </Form.Row>
-          <Form.Control placeholder="Subject" name="subject" style={{marginBottom: 10}} value={this.state.subject}
-            onChange={(text) => {this.setState({subject: text.target.value})}} />
-          <Form.Control placeholder="Message" name="message" style={{marginBottom: 10}} value={this.state.message}
-            onChange={(text) => {this.setState({message: text.target.value})}} as="textarea" rows="5" />
+          <Form.Control placeholder="Subject" name="subject" style={{/*maxWidth: "980px", margin: "auto",*/ marginBottom: 10}} 
+          value={this.state.subject} onChange={(text) => {this.setState({subject: text.target.value})}} />
+          <Form.Control placeholder="Message" name="message" style={{/*maxWidth: "980px", margin: "auto",*/ marginBottom: 10}} 
+          value={this.state.message} onChange={(text) => {this.setState({message: text.target.value})}} as="textarea" rows="5" />
           <div class="text-center">
             <Button variant={this.state.colour} onClick={this.handleSubmit.bind(this)} type="submit">{this.state.buttonText}</Button>
           </div>
