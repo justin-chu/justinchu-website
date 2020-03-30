@@ -47,10 +47,10 @@ class Main extends Component {
               {/*<Nav.Link as={NavLink} to="/resume">Resume</Nav.Link>*/}
               <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
             </Nav>
-            <a href="mailto: justinj.chu@mail.utoronto.ca" style={{color: 'black'}}><GoMail style={{marginRight: 15, color: ''}} size="2em" /></a>
-            <a href="https://devpost.com/justin-chu"><img style={{width:32, height:32, marginRight: 12, marginLeft: -2}} src={require(`../assets/images/devpost.svg`)} /></a>
-            <a href="https://github.com/justin-chu" style={{color: 'black'}}><IoLogoGithub style={{marginRight: 15}} size="1.7em" /></a>
-            <a href="https://www.linkedin.com/in/justinchu252/" style={{color: 'black'}}><IoLogoLinkedin size="2em" /></a>
+            <a href="mailto: justinj.chu@mail.utoronto.ca" style={{color: 'black'}} target="_blank"><GoMail style={{marginRight: 15, color: ''}} size="2em" /></a>
+            <a href="https://devpost.com/justin-chu" target="_blank"><img style={{width:32, height:32, marginRight: 12, marginLeft: -2}} src={require(`../assets/images/devpost.svg`)} /></a>
+            <a href="https://github.com/justin-chu" style={{color: 'black'}} target="_blank"><IoLogoGithub style={{marginRight: 15}} size="1.7em" /></a>
+            <a href="https://www.linkedin.com/in/justinchu252/" style={{color: 'black'}} target="_blank"><IoLogoLinkedin size="2em" /></a>
           </Navbar.Collapse>
         </Navbar>
         <div className="content">

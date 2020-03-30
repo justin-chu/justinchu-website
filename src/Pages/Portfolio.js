@@ -24,7 +24,7 @@ class Portfolio extends Component {
                   <Card.Body style={{flex: 1}}>
                     <Card.Title style={{flex: 1}}>{project.title}</Card.Title>
                     <Card.Text style={{flex: 1}}>{project.description}</Card.Text>
-                    <Button variant="primary" style={{marginBottom: 10, marginRight: 10, bottom: 0, position: 'absolute', right: 0}} href={project.link}>Check it out!</Button>
+                    <Button variant="primary" style={{marginBottom: 10, marginRight: 10, bottom: 0, position: 'absolute', right: 0}} href={project.link} target="_blank">Check it out!</Button>
                   </Card.Body>
                 </Card>
           ))}
