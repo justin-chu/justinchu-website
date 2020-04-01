@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, NavLink, HashRouter, Redirect } from "react-router-dom";
+import storage from 'local-storage-fallback';
 
 import About from "./About";
 import Portfolio from "./Portfolio";
@@ -13,25 +14,26 @@ import { FiSun, FiMoon } from 'react-icons/fi';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
+function getDark() {
+  const savedMode = storage.getItem('mode');
+  return savedMode === 'dark';
+}
+
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      darkMode: false
+      darkMode: getDark()
     };
   }
 
-  componentDidMount() {
-    const darkModeCache = localStorage.getItem('darkModeCache');
-    console.log(darkModeCache == true ? 'true' : 'false')
-    this.setState({
-      darkMode: darkModeCache == true ? true : false
-    })
-  }
-
   toggleDark() {
-    this.setState({ darkMode: !this.state.darkMode });
-    localStorage.setItem('darkModeCache', !this.state.darkMode)
+    this.setState({ darkMode: !this.state.darkMode }, ()=> {
+      if(this.state.darkMode)
+        storage.setItem('mode', 'dark');
+      else
+        storage.setItem('mode', 'light');
+    });
   }
 
   render() {
