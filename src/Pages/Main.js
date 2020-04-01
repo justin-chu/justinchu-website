@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, NavLink, HashRouter, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, NavLink, Redirect } from "react-router-dom";
 import storage from 'local-storage-fallback';
 
 import About from "./About";
@@ -38,7 +38,7 @@ class Main extends Component {
 
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <Redirect to="/about" />
         <Navbar variant={this.state.darkMode ? "dark" : "light"} bg={this.state.darkMode ? "dark" : "light"} expand="lg">
           <Navbar.Brand className="name" style={this.state.darkMode ? {color: 'white'}: {color: 'black'}} as={NavLink} to="/about">Justin Chu</Navbar.Brand>
@@ -81,7 +81,7 @@ class Main extends Component {
         <div style={this.state.darkMode ? {backgroundColor: '#343a40'}: {backgroundColor: '#f8f9fa'}} class="footer"> {/*style={this.state.height/this.state.width > 1 ? {top: this.state.height/4} : {bottom: -9}}>*/}
           <p style={this.state.darkMode ? {color: 'white', margin: 'auto'}: {color: 'black', margin: 'auto'}}>© Justin Chu 2020</p>
         </div>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }
