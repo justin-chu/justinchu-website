@@ -8,23 +8,7 @@ class About extends Component {
   constructor(props) {
     super(props);
   }
-
-  componentWillUpdate() {
-    if(this.props.darkMode) {
-      for(const [key, value] of chartData.options.entries())
-      {
-        value.colors[0] = '#298fca';
-      }
-    }
-    else{
-      for(const [key, value] of chartData.options.entries())
-      {
-        value.colors[0] = '#255aee';
-      }
-    }
-    
-  }
-
+  
   render() {
     return (
       <div>
