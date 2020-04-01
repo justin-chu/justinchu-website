@@ -51,8 +51,8 @@ class Main extends Component {
               <Nav.Link as={NavLink} to="/contact" style={this.state.darkMode ? {color: 'white'}: {color: 'black'}}>Contact</Nav.Link>
               <Nav.Link onClick={this.toggleDark.bind(this)}>
                 {this.state.darkMode ? 
-                <FiSun style={{marginBottom: 3, color: 'white'}} size="1.4em" /> :
-                <FiMoon style={{marginBottom: 3, color: 'black'}} size="1.4em" />
+                <FiMoon style={{marginBottom: 3, color: 'white'}} size="1.4em" /> :
+                <FiSun style={{marginBottom: 3, color: 'black'}} size="1.4em" />
                 }
               </Nav.Link>
             </Nav>
