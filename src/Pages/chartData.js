@@ -1,6 +1,7 @@
-export const chartData = {          
+export const chartData = {  
   series: [[90], [85], [70], [60], [40]],
   options: [{
+    colors: ['#255aee'],
     chart: {
       type: 'radialBar',
     },
@@ -14,6 +15,7 @@ export const chartData = {
     labels: ['React Native'],
   },
   {
+    colors: ['#255aee'],
     chart: {
       type: 'radialBar',
     },
@@ -27,6 +29,7 @@ export const chartData = {
     labels: ['Java'],
   },
   {
+    colors: ['#255aee'],
     chart: {
       type: 'radialBar',
     },
@@ -40,6 +43,7 @@ export const chartData = {
     labels: ['Python'],
   },
   {
+    colors: ['#255aee'],
     chart: {
       type: 'radialBar',
     },
@@ -53,6 +57,7 @@ export const chartData = {
     labels: ['Node.js'],
   },
   {
+    colors: ['#255aee'],
     chart: {
       type: 'radialBar',
     },

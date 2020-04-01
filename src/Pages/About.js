@@ -5,14 +5,34 @@ import Chart from "react-apexcharts";
 import { chartData } from './chartData';
 
 class About extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillUpdate() {
+    if(this.props.darkMode) {
+      for(const [key, value] of chartData.options.entries())
+      {
+        value.colors[0] = '#298fca';
+      }
+    }
+    else{
+      for(const [key, value] of chartData.options.entries())
+      {
+        value.colors[0] = '#255aee';
+      }
+    }
+    
+  }
+
   render() {
     return (
       <div>
-        <Jumbotron class="d-flex justify-content-between">
+        <Jumbotron style={this.props.darkMode ? {backgroundColor: '#343a40'}: {}} class="d-flex justify-content-between">
           <div style={{marginTop: -20}}>
             <Anime opacity={[0, 1]} translateY={'1em'} delay={(e, i) => i * 1000}>
-              <h1>Hi! I'm Justin.</h1>
-              <p>
+              <h1 style={this.props.darkMode ? {color: 'white'}: {color: 'black'}}>Hi! I'm Justin.</h1>
+              <p style={this.props.darkMode ? {color: 'white'}: {color: 'black'}}>
                 I'm a first-year undergraduate student at the University of Toronto studying Computer Science.
               </p>
             </Anime>

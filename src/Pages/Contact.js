@@ -48,7 +48,7 @@ class Contact extends Component {
     return (
       <div class="pl-5 pr-5 mt-5 mb-5">
 
-        <h3 class="text-center mb-3">Contact me!</h3>
+        <h3 class="text-center mb-3" style={this.props.darkMode ? {color: 'white'}: {color: 'black'}}>Contact me!</h3>
         <Form>
           <Form.Row /*style={{maxWidth: "990px", margin: "auto"}}*/>
             <div class="col-sm">
