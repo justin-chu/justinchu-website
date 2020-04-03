@@ -24,7 +24,7 @@ class Portfolio extends Component {
         <Anime opacity={[0, 1]} translateY={'1em'} delay={(e, i) => i * 100}>
           {Object.values(projectObjects).map(project => (
                 <Card bg={this.props.darkMode ? 'dark': ''} style={{ height: 220, flex: 1 }}>
-                  <Card.Header style={this.props.darkMode ? {backgroundColor: '#adb5bd'}: {}} as="p">{this.renderIcons(project.langs)}</Card.Header>
+                  <Card.Header style={this.props.darkMode ? {backgroundColor: '#dee2e6'}: {}} as="p">{this.renderIcons(project.langs)}</Card.Header>
                   <Card.Body style={{flex: 1}}>
                     <Card.Title style={this.props.darkMode ? {color: 'white'}: {color: 'black'}}>{project.title}</Card.Title>
                     <Card.Text style={this.props.darkMode ? {color: 'white'}: {color: 'black'}}>{project.description}</Card.Text>
