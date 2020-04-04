@@ -39,7 +39,6 @@ class Main extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Redirect to="/about" />
         <Navbar variant={this.state.darkMode ? "dark" : "light"} bg={this.state.darkMode ? "dark" : "light"} expand="lg">
           <Navbar.Brand className="name" style={this.state.darkMode ? {color: 'white'}: {color: 'black'}} as={NavLink} to="/about">Justin Chu</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
