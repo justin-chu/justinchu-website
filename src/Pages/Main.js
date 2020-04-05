@@ -71,6 +71,9 @@ class Main extends Component {
           </Navbar.Collapse>
         </Navbar>
         <div className="content" style={this.state.darkMode ? {backgroundColor: '#212529'} : {backgroundColor: 'white'}}>
+          <Route exact path="/">
+            <Redirect to="/about" />
+          </Route>
           <Route exact path="/about" render={props=><About darkMode={this.state.darkMode} />}/>
           <Route exact path="/portfolio" render={props=><Portfolio darkMode={this.state.darkMode} />}/>
           {/* <Route exact path="/resume" component={Resume}/> */}
