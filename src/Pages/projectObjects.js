@@ -3,7 +3,7 @@ export const projectObjects = {
     title: "This website",
     langs: ['react-native.svg', 'nodejs.svg', 'bootstrap.svg'],
     description: "A personal website built using React and Bootstrap",
-    link: "https://justinchu.tech"
+    link: "https://github.com/justin-chu/justinchu-website"
   },
   project2: {
     title: "Harvest",

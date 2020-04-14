@@ -23,6 +23,7 @@ class Portfolio extends Component {
       <CardColumns style={{marginTop: -16}}>
         <Anime opacity={[0, 1]} translateY={'1em'} delay={(e, i) => i * 100}>
           {Object.values(projectObjects).map(project => (
+              // <a style={{cursor: 'pointer'}} href={project.link} target="_blank">
                 <Card bg={this.props.darkMode ? 'dark': ''} style={{ height: 220, flex: 1 }}>
                   <Card.Header style={this.props.darkMode ? {backgroundColor: '#dee2e6'}: {}} as="p">{this.renderIcons(project.langs)}</Card.Header>
                   <Card.Body style={{flex: 1}}>
@@ -31,6 +32,7 @@ class Portfolio extends Component {
                     <Button variant="primary" style={{marginBottom: 10, marginRight: 10, bottom: 0, position: 'absolute', right: 0}} href={project.link} target="_blank">Check it out!</Button>
                   </Card.Body>
                 </Card>
+              // </a>
           ))}
         </Anime>
       </CardColumns>
