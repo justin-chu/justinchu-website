@@ -47,7 +47,6 @@ class Contact extends Component {
   render() {
     return (
       <div class="pl-5 pr-5 mt-5 mb-5">
-
         <h3 class="text-center mb-3" style={this.props.darkMode ? {color: 'white'}: {color: 'black'}}>Contact me!</h3>
         <Form>
           <Form.Row /*style={{maxWidth: "990px", margin: "auto"}}*/>
@@ -72,7 +71,6 @@ class Contact extends Component {
         <Alert show={this.state.show} style={{marginTop: 20}} variant="danger">
           Please enter both your name and email!
         </Alert>
-
       </div>
     );
   }

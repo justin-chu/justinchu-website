@@ -7,7 +7,7 @@ import Portfolio from "./Portfolio";
 // import Resume from "./Resume";
 import Contact from "./Contact";
 
-import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io';
+import { IoLogoGithub, IoLogoLinkedin, IoMdMenu } from 'react-icons/io';
 import { GoMail } from 'react-icons/go';
 import { FiSun, FiMoon } from 'react-icons/fi';
 
@@ -39,15 +39,19 @@ class Main extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Navbar variant={this.state.darkMode ? "dark" : "light"} bg={this.state.darkMode ? "dark" : "light"} expand="lg">
+        <Navbar variant={this.state.darkMode ? "dark" : "light"} bg={this.state.darkMode ? "dark" : "light"} expand="lg" collapseOnSelect>
           <Navbar.Brand className="name" style={this.state.darkMode ? {color: 'white'}: {color: 'black'}} as={NavLink} to="/about">Justin Chu</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{outline: 'none', border: 0}}>
+            <span>
+              <IoMdMenu style={{color: 'black'}} size="1.4em" />
+            </span>
+          </Navbar.Toggle>
+          <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto" style={{marginTop: 3.2}}>
-              <Nav.Link as={NavLink} to="/about" style={this.state.darkMode ? {color: 'white'}: {color: 'black'}}>About</Nav.Link>
-              <Nav.Link as={NavLink} to="/portfolio" style={this.state.darkMode ? {color: 'white'}: {color: 'black'}}>Portfolio</Nav.Link>
+              <Nav.Link eventKey="1" as={NavLink} to="/about" style={this.state.darkMode ? {color: 'white'}: {color: 'black'}}>About</Nav.Link>
+              <Nav.Link eventKey="2" as={NavLink} to="/portfolio" style={this.state.darkMode ? {color: 'white'}: {color: 'black'}}>Portfolio</Nav.Link>
               {/*<Nav.Link as={NavLink} to="/resume">Resume</Nav.Link>*/}
-              <Nav.Link as={NavLink} to="/contact" style={this.state.darkMode ? {color: 'white'}: {color: 'black'}}>Contact</Nav.Link>
+              <Nav.Link eventKey="3" as={NavLink} to="/contact" style={this.state.darkMode ? {color: 'white'}: {color: 'black'}}>Contact</Nav.Link>
               <Nav.Link onClick={this.toggleDark.bind(this)}>
                 {this.state.darkMode ? 
                 <FiMoon style={{marginBottom: 3, color: 'white'}} size="1.4em" /> :

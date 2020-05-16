@@ -19,11 +19,11 @@ class Portfolio extends Component {
 
   renderCards = () => {
     return(
-      <div style={{paddingBottom: 70}}>
+      // <div style={{marginBottom: 0}}>
         <CardColumns style={{marginTop: -16}}>
           <Anime opacity={[0, 1]} translateY={'1em'} delay={(e, i) => i * 100}>
             {Object.values(projectObjects).map(project => (
-              <div >
+              <div>
                 <a class="portfolio-card" href={project.link} target="_blank">
                   <Card bg={this.props.darkMode ? 'dark': ''} style={{height: 220, flex: 1}}>
                     <Card.Header style={this.props.darkMode ? {backgroundColor: '#dee2e6'}: {}} as="p">{this.renderIcons(project.langs)}</Card.Header>
@@ -38,7 +38,7 @@ class Portfolio extends Component {
             ))}
           </Anime>
         </CardColumns>
-      </div>
+      // </div>
     )
   }
 
