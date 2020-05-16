@@ -1,3 +1,14 @@
+.portfolio-card {
+  cursor: pointer;
+}
+.portfolio-card:hover {
+  filter: brightness(90%);
+  transition: 0.2s;
+}
+.portfolio-card:not(:hover) {
+  filter: brightness(100%);
+  transition: 0.2s;
+}
 .name {
   font-weight: bold;
 }
