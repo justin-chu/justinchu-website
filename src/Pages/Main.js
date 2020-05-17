@@ -43,7 +43,7 @@ class Main extends Component {
           <Navbar.Brand className="name" style={this.state.darkMode ? {color: 'white'}: {color: 'black'}} as={NavLink} to="/about">Justin Chu</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{outline: 'none', border: 0}}>
             <span>
-              <IoMdMenu style={{color: 'black'}} size="1.4em" />
+              <IoMdMenu style={this.state.darkMode ? {color: 'white'}: {color: 'black'}} size="1.4em" />
             </span>
           </Navbar.Toggle>
           <Navbar.Collapse id="responsive-navbar-nav">
