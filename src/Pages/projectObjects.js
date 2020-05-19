@@ -3,7 +3,7 @@ import React from "react";
 export const projectObjects = {
   project0: {
     title: "eARF Website",
-    langs: ['react-native.svg', 'gatsby.svg', 'nodejs.svg', 'styled.svg'],
+    langs: ['react-native.svg', 'gatsby.svg', 'nodejs.svg', 'styled.svg', 'figma.svg'],
     description: <p>A website developed for the card game eARF, using React, Gatsby, and styled components</p>,
     link: "https://naughty-montalcini-4cff5b.netlify.app/"
   },
