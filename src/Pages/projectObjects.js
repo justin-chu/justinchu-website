@@ -4,7 +4,7 @@ export const projectObjects = {
   project0: {
     title: "eARF Website",
     langs: ['react-native.svg', 'gatsby.svg', 'nodejs.svg', 'styled.svg', 'figma.svg'],
-    description: <p>A website developed for the card game eARF, using React, Gatsby, and styled components</p>,
+    description: <p>A website created for the card game eARF, designed with Figma and devloped with React, Gatsby, and styled components</p>,
     link: "https://naughty-montalcini-4cff5b.netlify.app/"
   },
   project1: {
