@@ -1,11 +1,18 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, NavLink, Redirect } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  NavLink,
+  Redirect,
+  Switch,
+} from "react-router-dom";
 import storage from "local-storage-fallback";
 
 import About from "./About";
 import Portfolio from "./Portfolio";
 // import Resume from "./Resume";
 import Contact from "./Contact";
+import PageNotFound from "./PageNotFound";
 
 import { IoLogoGithub, IoLogoLinkedin, IoMdMenu } from "react-icons/io";
 import { GoMail } from "react-icons/go";
@@ -174,25 +181,35 @@ class Main extends Component {
               : { backgroundColor: "white" }
           }
         >
-          <Route exact path="/">
-            <Redirect to="/about" />
-          </Route>
-          <Route
-            exact
-            path="/about"
-            render={() => <About darkMode={this.state.darkMode} />}
-          />
-          <Route
-            exact
-            path="/portfolio"
-            render={() => <Portfolio darkMode={this.state.darkMode} />}
-          />
-          {/* <Route exact path="/resume" component={Resume}/> */}
-          <Route
-            exact
-            path="/contact"
-            render={() => <Contact darkMode={this.state.darkMode} />}
-          />
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/about" />
+            </Route>
+            <Route
+              exact
+              path="/about"
+              render={() => <About darkMode={this.state.darkMode} />}
+            />
+            <Route
+              exact
+              path="/portfolio"
+              render={() => <Portfolio darkMode={this.state.darkMode} />}
+            />
+            {/* <Route exact path="/resume" component={Resume}/> */}
+            <Route
+              exact
+              path="/contact"
+              render={() => <Contact darkMode={this.state.darkMode} />}
+            />
+            <Route
+              exact
+              path="/404"
+              render={() => <PageNotFound darkMode={this.state.darkMode} />}
+            />
+            <Route exact path="*">
+              <Redirect to="/404" />
+            </Route>
+          </Switch>
         </div>
 
         <div
