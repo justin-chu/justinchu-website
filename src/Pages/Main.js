@@ -1,240 +1,79 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   BrowserRouter,
   Route,
-  NavLink,
   Redirect,
   Switch,
 } from "react-router-dom";
-import storage from "local-storage-fallback";
-
-import About from "./About";
-import Portfolio from "./Portfolio";
-// import Resume from "./Resume";
-import Contact from "./Contact";
+import About from "./About/About";
+import Portfolio from "./Portfolio/Portfolio";
+import Resume from "./Resume";
 import PageNotFound from "./PageNotFound";
+import Navbar from "../Components/Navbar"
 
-import { IoLogoGithub, IoLogoLinkedin, IoMdMenu } from "react-icons/io";
-import { GoMail } from "react-icons/go";
-import { FiSun, FiMoon } from "react-icons/fi";
+const Main = () => {
+  const [slide, setSlide] = React.useState(0)
+  const [lastScrollY, setLastScrollY] = React.useState(0)
 
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-
-function getDark() {
-  const savedMode = storage.getItem("mode");
-  return savedMode === "dark";
-}
-
-class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      darkMode: getDark(),
+  React.useEffect(() => {
+    const handleScroll = () => {
+      // const { lastScrollY } = lastScrollY;
+      const currentScrollY = window.scrollY;
+      console.log(currentScrollY, lastScrollY, slide)
+      if (currentScrollY > lastScrollY) {
+        setSlide(-48);
+      } else {
+        console.log('asd')
+        setSlide(0);
+      }
+      setLastScrollY(currentScrollY )
     };
-  }
 
-  toggleDark() {
-    this.setState({ darkMode: !this.state.darkMode }, () => {
-      if (this.state.darkMode) storage.setItem("mode", "dark");
-      else storage.setItem("mode", "light");
-    });
-  }
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
-  render() {
-    return (
-      <BrowserRouter>
-        <Navbar
-          variant={this.state.darkMode ? "dark" : "light"}
-          bg={this.state.darkMode ? "dark" : "light"}
-          expand="lg"
-          collapseOnSelect
-        >
-          <Navbar.Brand
-            className="name"
-            style={
-              this.state.darkMode ? { color: "white" } : { color: "black" }
-            }
-            as={NavLink}
-            to="/about"
-          >
-            Justin Chu
-          </Navbar.Brand>
-          <Navbar.Toggle
-            aria-controls="responsive-navbar-nav"
-            style={{ outline: "none", border: 0 }}
-          >
-            <span>
-              <IoMdMenu
-                style={
-                  this.state.darkMode ? { color: "white" } : { color: "black" }
-                }
-                size="1.4em"
-              />
-            </span>
-          </Navbar.Toggle>
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto" style={{ marginTop: 3.2 }}>
-              <Nav.Link
-                eventKey="1"
-                as={NavLink}
-                to="/about"
-                style={
-                  this.state.darkMode ? { color: "white" } : { color: "black" }
-                }
-              >
-                About
-              </Nav.Link>
-              <Nav.Link
-                eventKey="2"
-                as={NavLink}
-                to="/portfolio"
-                style={
-                  this.state.darkMode ? { color: "white" } : { color: "black" }
-                }
-              >
-                Portfolio
-              </Nav.Link>
-              {/*<Nav.Link as={NavLink} to="/resume">Resume</Nav.Link>*/}
-              <Nav.Link
-                eventKey="3"
-                as={NavLink}
-                to="/contact"
-                style={
-                  this.state.darkMode ? { color: "white" } : { color: "black" }
-                }
-              >
-                Contact
-              </Nav.Link>
-              <Nav.Link onClick={this.toggleDark.bind(this)}>
-                {this.state.darkMode ? (
-                  <FiMoon
-                    style={{ marginBottom: 3, color: "white" }}
-                    size="1.4em"
-                  />
-                ) : (
-                  <FiSun
-                    style={{ marginBottom: 3, color: "black" }}
-                    size="1.4em"
-                  />
-                )}
-              </Nav.Link>
-            </Nav>
+  return (
+    <BrowserRouter>
+      <Navbar style={{
+          transform: `translate(0, ${slide}px)`,
+          transition: 'transform 90ms linear',
+        }}/>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <About />}
+          />
+          <Route
+            exact
+            path="/portfolio"
+            render={() => <Portfolio />}
+          />
+          <Route
+            exact
+            path="/resume"
+            render={() => <Resume />}
+          />
+          <Route
+            exact
+            path="/404"
+            render={() => <PageNotFound />}
+          />
+          <Route exact path="*">
+            <Redirect to="/404" />
+          </Route>
+        </Switch>
 
-            <a
-              href="mailto: justinj.chu@mail.utoronto.ca"
-              style={
-                this.state.darkMode ? { color: "white" } : { color: "black" }
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GoMail style={{ marginRight: 15, color: "" }} size="2em" />
-            </a>
-            <a
-              href="https://devpost.com/justin-chu"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                style={{
-                  width: 32,
-                  height: 32,
-                  marginRight: 12,
-                  marginLeft: -2,
-                }}
-                src={
-                  this.state.darkMode
-                    ? require(`../assets/images/devpost_white.svg`)
-                    : require(`../assets/images/devpost.svg`)
-                }
-                alt=""
-              />
-            </a>
-            <a
-              href="https://github.com/justin-chu"
-              style={
-                this.state.darkMode ? { color: "white" } : { color: "black" }
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <IoLogoGithub style={{ marginRight: 15 }} size="1.7em" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/justinchu252/"
-              style={
-                this.state.darkMode ? { color: "white" } : { color: "black" }
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <IoLogoLinkedin size="2em" />
-            </a>
-          </Navbar.Collapse>
-        </Navbar>
-        <div
-          className="content"
-          style={
-            this.state.darkMode
-              ? { backgroundColor: "#212529" }
-              : { backgroundColor: "white" }
-          }
-        >
-          <Switch>
-            <Route exact path="/">
-              <Redirect to="/about" />
-            </Route>
-            <Route
-              exact
-              path="/about"
-              render={() => <About darkMode={this.state.darkMode} />}
-            />
-            <Route
-              exact
-              path="/portfolio"
-              render={() => <Portfolio darkMode={this.state.darkMode} />}
-            />
-            {/* <Route exact path="/resume" component={Resume}/> */}
-            <Route
-              exact
-              path="/contact"
-              render={() => <Contact darkMode={this.state.darkMode} />}
-            />
-            <Route
-              exact
-              path="/404"
-              render={() => <PageNotFound darkMode={this.state.darkMode} />}
-            />
-            <Route exact path="*">
-              <Redirect to="/404" />
-            </Route>
-          </Switch>
-        </div>
-
-        <div
-          style={
-            this.state.darkMode
-              ? { backgroundColor: "#343a40" }
-              : { backgroundColor: "#f8f9fa" }
-          }
-          className="footer"
-        >
-          {" "}
-          {/*style={this.state.height/this.state.width > 1 ? {top: this.state.height/4} : {bottom: -9}}>*/}
-          <p
-            style={
-              this.state.darkMode
-                ? { color: "white", margin: "auto" }
-                : { color: "black", margin: "auto" }
-            }
-          >
-            © Justin Chu 2020
-          </p>
-        </div>
-      </BrowserRouter>
-    );
-  }
+      <div className="footer">
+        <p>
+          © Justin Chu 2020
+        </p>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default Main;

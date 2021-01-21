@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Form from "react-bootstrap/Form";
-import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
+// import Form from "react-bootstrap/Form";
+// import Alert from "react-bootstrap/Alert";
+// import Button from "react-bootstrap/Button";
 
 const encode = (data) => {
   return Object.keys(data)
@@ -65,8 +65,8 @@ class Contact extends Component {
         >
           Contact me!
         </h3>
-        <Form>
-          <Form.Row /*style={{maxWidth: "990px", margin: "auto"}}*/>
+        {/* <Form>
+          <Form.Row>
             <div class="col-sm">
               <Form.Control
                 placeholder="Name"
@@ -93,7 +93,7 @@ class Contact extends Component {
           <Form.Control
             placeholder="Subject"
             name="subject"
-            style={{ /*maxWidth: "980px", margin: "auto",*/ marginBottom: 10 }}
+            style={{marginBottom: 10 }}
             value={this.state.subject}
             onChange={(text) => {
               this.setState({ subject: text.target.value });
@@ -102,7 +102,7 @@ class Contact extends Component {
           <Form.Control
             placeholder="Message"
             name="message"
-            style={{ /*maxWidth: "980px", margin: "auto",*/ marginBottom: 10 }}
+            style={{marginBottom: 10 }}
             value={this.state.message}
             onChange={(text) => {
               this.setState({ message: text.target.value });
@@ -127,7 +127,7 @@ class Contact extends Component {
           variant="danger"
         >
           Please enter both your name and email!
-        </Alert>
+        </Alert> */}
       </div>
     );
   }

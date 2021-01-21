@@ -1,0 +1,46 @@
+.date-button {
+  padding: 6px 18px;
+  background-color: #f5f4f4;
+  transition: opacity 0.2s ease;
+  border-radius: 10px 0 0 10px;
+  margin-right: 2px;
+}
+
+.letter-button {
+  padding: 6px 18px;
+  background-color: #f5f4f4;
+  transition: opacity 0.3s ease;
+  border-radius: 0 10px 10px 0;
+  transition: opacity 0.2s ease;
+}
+
+.date-button:hover {
+  opacity: 0.5;
+}
+
+.letter-button:hover {
+  opacity: 0.5;
+}
+
+.project {
+  display: flex;
+  flex-direction: row;
+  background-color: #f5f4f4;
+  border-radius: 10px;
+  padding: 30px 30px;
+  height: 160px;
+  margin-bottom: 20px;
+  color: black;
+  transition: box-shadow 0.2s ease-in-out !important;
+}
+
+.project:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  width: 220px;
+  margin-right: 30px;
+  border-radius: 5px 0 0 5px;
+  background-color: red;
+}

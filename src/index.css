@@ -1,42 +1,26 @@
-.portfolio-card {
-  cursor: pointer;
-}
-.portfolio-card:hover {
-  filter: brightness(90%);
-  transition: 0.2s;
-}
-.portfolio-card:not(:hover) {
-  filter: brightness(100%);
-  transition: 0.2s;
-}
-.name {
-  font-weight: bold;
-}
 h1,
 h2,
+h3,
+h4,
+h5,
+h6,
 p,
 ul,
 li {
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
+  color: #333;
 }
-.content {
-  padding: 20px;
-  overflow: hidden;
-  min-height: 93vh;
+
+button {
+  border: none;
+  cursor: pointer;
 }
-.content h2 {
-  padding: 0;
-  margin: 0;
+
+button:focus {
+  outline: none;
 }
-.content li {
-  margin-bottom: 10px;
-}
-.active {
-  font-weight: bold;
-}
+
 .footer {
-  display: flex;
-  margin-top: auto;
   width: 100%;
   height: 50px;
   position: relative;
