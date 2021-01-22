@@ -1,0 +1,13 @@
+.resume-container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 60px;
+  min-height: calc(60vh);
+}
+
+@media only screen and (max-width: 640px) {
+  .resume-container {
+    padding: 20px;
+    text-align: center;
+  }
+}

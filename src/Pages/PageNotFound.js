@@ -1,35 +1,37 @@
-import React, { Component } from "react";
+import React, { useCallback } from "react";
+import { useHistory } from "react-router-dom";
 
-class PageNotFound extends Component {
-  render() {
-    return (
+const PageNotFound = () => {
+  const history = useHistory();
+  const handleOnClick = useCallback(() => history.push("/"), [history]);
+  return (
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
+          width: "100%",
+          maxWidth: 1280,
+          padding: 20,
+          minHeight: "100vh",
           textAlign: "center",
         }}
       >
-        <p
-          style={{
-            fontSize: 160,
-            marginTop: "15vh",
-            color: this.props.darkMode ? "white" : "black",
-            lineHeight: "80%",
-          }}
+        <h1
+          className="sub-header"
+          style={{ margin: "5% 0 0 0", fontSize: 120 }}
         >
           404
-        </p>
-        <p
-          style={{
-            fontSize: 38,
-            color: this.props.darkMode ? "white" : "black",
-          }}
+        </h1>
+        <p style={{ fontSize: 24, marginTop: 10 }}>Page not found!</p>
+        <button
+          style={{ margin: 0 }}
+          className="button"
+          onClick={handleOnClick}
         >
-          Page not found
-        </p>
+          Go back!
+        </button>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
 export default PageNotFound;
