@@ -7,8 +7,8 @@ const Skills = () => {
         Skills
       </h1>
       <p className="portfolio-desc" style={{ marginBottom: 40 }}>
-        These are a few of the languages/frameworks/technologies I've used in
-        projects and am most familiar with.
+        These are a few of the languages/frameworks I've used in projects and am
+        most familiar with.
       </p>
       <div className="grid">
         {SkillsItems.map((item, index) => {

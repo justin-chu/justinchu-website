@@ -46,7 +46,7 @@ const About = () => {
                 rel="noopener noreferrer"
               >
                 <button className="button resume-button" onClick={() => {}}>
-                  View resume
+                  View my resume
                 </button>
               </a>
             </div>

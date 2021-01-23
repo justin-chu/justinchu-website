@@ -31,7 +31,7 @@ export const Projects = [
   {
     title: "eARF Website",
     description: <>Website for eARF: The Card Game</>,
-    link: "https://naughty-montalcini-4cff5b.netlify.app/",
+    link: "https://playearf.com/",
     image: "earf.png",
   },
   {
@@ -50,8 +50,14 @@ export const Projects = [
         </span>
       </>
     ),
-    link: "https://github.com/shangar21/harvest",
+    link: "https://github.com/justin-chu/harvest",
     image: "harvest.jpeg",
+  },
+  {
+    title: "Clothology",
+    description: <>Mobile app developed for UofTHacks VII</>,
+    link: "https://github.com/CryogenicPlanet/UofTHacks-2020",
+    image: "clothology.jpeg",
   },
   {
     title: "Change4Change",
@@ -71,12 +77,6 @@ export const Projects = [
     description: <>Mobile app developed for FRC Team 7520</>,
     link: "https://github.com/justin-chu/FRC-Scouting-App",
     image: "frc.png",
-  },
-  {
-    title: "Clothology",
-    description: <>Mobile app developed for UofTHacks VII</>,
-    link: "https://github.com/CryogenicPlanet/UofTHacks-2020",
-    image: "clothology.jpeg",
   },
   {
     title: "Chess",

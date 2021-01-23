@@ -5,7 +5,7 @@ const Connect = () => {
   return (
     <div className="panel-5">
       <h1 className="sub-header" style={{ marginTop: 0, marginBottom: 0 }}>
-        Connect with me
+        Get in touch with me
       </h1>
       <p className="portfolio-desc" style={{ marginBottom: 40 }}>
         Send me an email, check out my GitHub, or connect with me on LinkedIn!
