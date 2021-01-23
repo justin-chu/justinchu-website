@@ -14,7 +14,7 @@ function MobileNavbar() {
           Justin Chu
         </h5>
       </Link>
-      <button onClick={() => setDrawer(true)} className="menu-button">
+      <button onClick={() => setDrawer(true)} className="icon-button">
         <svg
           height="22"
           width="22"
@@ -24,15 +24,25 @@ function MobileNavbar() {
         >
           <path
             fillRule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
             clipRule="evenodd"
           />
         </svg>
       </button>
-      <Drawer anchor="right" open={drawer} onClose={() => setDrawer(false)}>
+      <Drawer anchor="top" open={drawer} onClose={() => setDrawer(false)}>
         <div className="drawer">
-          <div className="mobile-nav-logo ">
-            <button onClick={() => setDrawer(false)} className="cross-button">
+          <div className="top-container">
+            <Link
+              to={{ pathname: "/" }}
+              className="nav-logo"
+              style={{ margin: 0 }}
+              onClick={() => setDrawer(false)}
+            >
+              <h5 className="nav-logo" style={{ fontWeight: 700, margin: 0 }}>
+                Justin Chu
+              </h5>
+            </Link>
+            <button onClick={() => setDrawer(false)} className="icon-button">
               <svg
                 height="22"
                 width="22"
@@ -49,15 +59,6 @@ function MobileNavbar() {
             </button>
           </div>
           <ul className="mobile-nav-menu">
-            <Link
-              to={{
-                pathname: "/",
-              }}
-              onClick={() => setDrawer(false)}
-              className="mobile-nav-links"
-            >
-              <li>Home</li>
-            </Link>
             <Link
               to={{
                 pathname: "/portfolio",

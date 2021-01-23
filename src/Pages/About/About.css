@@ -297,7 +297,7 @@
   }
 
   .intro {
-    font-size: 16px;
+    font-size: 18px;
     margin-right: 0;
   }
 }
@@ -429,10 +429,6 @@
 }
 
 @media only screen and (max-width: 640px) {
-  .sub-header {
-    text-align: center;
-  }
-
   .panel-1 {
     flex-direction: column;
     text-align: center;
@@ -442,9 +438,11 @@
 
   .panel-2 {
     padding: 60px 10px 10px 10px;
+    text-align: center;
   }
 
   .panel-5 {
+    text-align: center;
     padding: 10px;
     margin: -60px 0 60px 0;
   }

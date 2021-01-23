@@ -3,9 +3,13 @@ import { SkillsItems } from "./SkillsItems";
 const Skills = () => {
   return (
     <div className="panel-2">
-      <h1 className="sub-header" style={{ marginTop: 0 }}>
+      <h1 className="sub-header" style={{ marginTop: 0, marginBottom: 0 }}>
         Skills
       </h1>
+      <p className="portfolio-desc" style={{ marginBottom: 40 }}>
+        These are a few of the languages/frameworks/technologies I've used in
+        projects and am most familiar with.
+      </p>
       <div className="grid">
         {SkillsItems.map((item, index) => {
           return (

@@ -4,7 +4,12 @@ import { GoMail } from "react-icons/go";
 const Connect = () => {
   return (
     <div className="panel-5">
-      <h1 className="sub-header">Connect with me</h1>
+      <h1 className="sub-header" style={{ marginTop: 0, marginBottom: 0 }}>
+        Connect with me
+      </h1>
+      <p className="portfolio-desc" style={{ marginBottom: 40 }}>
+        Send me an email, check out my GitHub, or connect with me on LinkedIn!
+      </p>
       <div className="contact-container">
         <a
           href="mailto:j64chu@uwaterloo.ca"

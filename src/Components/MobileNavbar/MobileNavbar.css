@@ -1,4 +1,8 @@
-.menu-button {
+.top-container {
+  display: flex;
+}
+
+.icon-button {
   position: absolute;
   right: 14px;
   background-color: Transparent;
@@ -7,19 +11,6 @@
   overflow: hidden;
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  margin-top: 5px;
-}
-
-.cross-button {
-  position: absolute;
-  left: 12px;
-  background-color: Transparent;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  outline: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  margin-top: 5px;
 }
 
 .drawer {
@@ -30,19 +21,22 @@
 .mobile-nav-menu {
   display: grid;
   grid-template-rows: repeat(2, auto);
-  grid-gap: 16px;
+  grid-gap: 12px;
   list-style: none;
   padding: 0;
-  margin-top: 50px;
-  margin-left: 6px;
+  margin-top: 24px;
 }
 
 .mobile-nav-links {
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 18px;
   color: black;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: color 0.2s;
+}
+
+.mobile-nav-links:hover {
+  color: #daa520;
 }
 
 .bottom-container {
@@ -50,6 +44,5 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-  margin-left: 6px;
   width: 125px;
 }
