@@ -11,7 +11,7 @@ const Blog = () => {
         >
           Blog
         </h1>
-        <p style={{ marginBottom: 80 }}>
+        <p style={{ marginBottom: 80, fontSize: 18 }}>
           In the future, I'll be posting articles here about technology, my
           experiences, and more!
         </p>
