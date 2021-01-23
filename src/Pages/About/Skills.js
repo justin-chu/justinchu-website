@@ -9,8 +9,8 @@ const Skills = () => {
       <div className="grid">
         {SkillsItems.map((item, index) => {
           return (
-            <div>
-              <div key={index} className="item-container">
+            <div key={index}>
+              <div className="item-container">
                 <div className="item" style={{ backgroundColor: item.color }}>
                   <img
                     style={{ height: "50%", width: "50%" }}
