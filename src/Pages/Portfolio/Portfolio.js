@@ -5,17 +5,17 @@ import { Projects } from "./Projects";
 const Portfolio = () => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <div
-        style={{
-          width: "100%",
-          maxWidth: 1280,
-          padding: 60,
-          minHeight: "100vh",
-        }}
-      >
-        <h1 className="sub-header" style={{ marginTop: 0, marginBottom: 40 }}>
+      <div className="portfolio-container">
+        <h1
+          className="sub-header"
+          style={{ marginTop: 0, margin: 0, textAlign: "left" }}
+        >
           Portfolio
         </h1>
+        <p className="portfolio-desc">
+          Check out some of my past projects that I've built for school,
+          hackathons, or on my own.
+        </p>
         <div className="projects-container">
           {Projects.map((item, index) => {
             return (
@@ -38,10 +38,6 @@ const Portfolio = () => {
                     className="project-image-container"
                     style={{
                       backgroundImage: `url(/images/${item.image})`,
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "center",
-                      // filter: "blur(1px)",
                     }}
                   >
                     <img

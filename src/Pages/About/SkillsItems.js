@@ -18,6 +18,12 @@ export const SkillsItems = [
     color: "rgba(51, 103, 145, 0.1)",
   },
   {
+    path: "graphql.svg",
+    name: "GraphQL",
+    info: "",
+    color: "rgba(229, 53, 171, 0.1)",
+  },
+  {
     path: "typescript.svg",
     name: "TypeScript",
     info: "",
@@ -28,5 +34,17 @@ export const SkillsItems = [
     name: "C++",
     info: "",
     color: "rgba(0, 66, 131, 0.1)",
+  },
+  {
+    path: "python.svg",
+    name: "Python",
+    info: "",
+    color: "rgba(255, 215, 72, 0.1)",
+  },
+  {
+    path: "figma.svg",
+    name: "Figma",
+    info: "",
+    color: "rgba(162, 89, 255, 0.1)",
   },
 ];

@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import About from "./About/About";
 import Portfolio from "./Portfolio/Portfolio";
-import Resume from "./Resume/Resume";
+import Blog from "./Blog/Blog";
 import PageNotFound from "./PageNotFound";
 import Navbar from "../Components/Navbar";
 
@@ -41,7 +41,7 @@ const Main = () => {
       <Switch>
         <Route exact path="/" render={() => <About />} />
         <Route exact path="/portfolio" render={() => <Portfolio />} />
-        <Route exact path="/resume" render={() => <Resume />} />
+        <Route exact path="/blog" render={() => <Blog />} />
         <Route exact path="/404" render={() => <PageNotFound />} />
         <Route exact path="*">
           <Redirect to="/404" />
@@ -49,7 +49,7 @@ const Main = () => {
       </Switch>
 
       <div className="footer">
-        <p>© Justin Chu 2020</p>
+        <p>© Justin Chu 2021</p>
       </div>
     </BrowserRouter>
   );

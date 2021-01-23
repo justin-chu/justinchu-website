@@ -25,7 +25,7 @@ export const Projects = [
   {
     title: "Pathfinder",
     description: <>Website developed for nwHacks 2021</>,
-    link: "https://www.edupathfinder.com/",
+    link: "https://www.edupathfinder.tech/",
     image: "pathfinder.png",
   },
   {

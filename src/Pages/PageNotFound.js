@@ -11,7 +11,7 @@ const PageNotFound = () => {
           width: "100%",
           maxWidth: 1280,
           padding: 20,
-          minHeight: "100vh",
+          minHeight: "75vh",
           textAlign: "center",
         }}
       >

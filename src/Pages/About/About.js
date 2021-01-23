@@ -15,6 +15,15 @@ const About = () => {
     });
   }
 
+  function ScrollToContent() {
+    var content = document.getElementById("content").offsetTop;
+    window.scrollTo({
+      top: content,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div style={{ width: "100%", maxWidth: 1280, minHeight: "100vh" }}>
@@ -26,9 +35,21 @@ const About = () => {
               Waterloo who loves building websites and apps from front-end to
               back-end!
             </p>
-            <button className="button" onClick={() => ScrollToBottom()}>
-              Contact me
-            </button>
+            <div>
+              <button className="button" onClick={() => ScrollToBottom()}>
+                Contact me
+              </button>
+              <a
+                style={{ textDecoration: "none" }}
+                href="https://drive.google.com/file/d/1r3gJgt1mFUHEEGLmqVqC1CORPbf5Hm5-/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="button resume-button" onClick={() => {}}>
+                  View resume
+                </button>
+              </a>
+            </div>
           </div>
           <img src={Code} alt="" className="image" />
         </div>
@@ -39,6 +60,8 @@ const About = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            onClick={() => ScrollToContent()}
+            style={{ cursor: "pointer" }}
           >
             <path
               strokeLinecap="round"
@@ -48,9 +71,11 @@ const About = () => {
             />
           </svg>
         </div>
-        <Skills />
-        {/* <ResumeProjects /> */}
-        <Connect />
+        <div id="content">
+          <Skills />
+          {/* <ResumeProjects /> */}
+          <Connect />
+        </div>
       </div>
     </div>
   );

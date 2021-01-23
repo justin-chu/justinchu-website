@@ -23,8 +23,9 @@
 
 .button {
   background-color: black;
-  border-radius: 25px;
-  padding: 15px 20px;
+  border: none;
+  border-radius: 30px;
+  padding: 18px 22px;
   color: white;
   font-weight: bold;
   margin: 40px 10px 0 0;
@@ -33,6 +34,20 @@
 
 .button:hover {
   background-color: #daa520;
+  border-color: #daa520;
+}
+
+.resume-button {
+  padding: 16px 20px;
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  transition: border-color 0.3s ease !important;
+}
+
+.resume-button:hover {
+  border-color: #daa520;
+  background-color: white;
 }
 
 .arrow {
@@ -68,7 +83,7 @@
 
 .panel-2 {
   display: block;
-  padding: 0 60px;
+  padding: 60px 60px 0 60px;
 }
 
 .sub-header {
@@ -79,9 +94,9 @@
 .grid {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   grid-gap: 20px;
-  grid-row-gap: 60px;
+  grid-row-gap: 10px;
   margin-bottom: 100px;
 }
 
@@ -221,10 +236,11 @@
   transition: opacity 0.3s ease;
   margin-right: 16px;
   background-color: #ffe3e3;
+  border: none;
 }
 
 .contact:hover {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 @keyframes move-right {
@@ -294,11 +310,13 @@
     font-size: 42px;
   }
 
-  .sub-header {
-    font-size: 28px;
+  .button {
+    border-radius: 20px;
+    padding: 12px 18px;
+    margin: 20px 10px 0 0;
   }
 
-  .button {
+  .resume-button {
     border-radius: 20px;
     padding: 10px 15px;
     margin: 20px 10px 0 0;
@@ -363,16 +381,6 @@
   .arrow {
     margin-top: 80px;
   }
-
-  .sub-header {
-    font-size: 24px;
-  }
-
-  .button {
-    border-radius: 20px;
-    padding: 10px 15px;
-    margin: 20px 10px 0 0;
-  }
 }
 
 @media only screen and (max-width: 730px) {
@@ -411,10 +419,11 @@
   }
 
   .button {
-    border-radius: 20px;
-    padding: 10px 15px;
-    margin: 20px 10px 0 0;
-    font-size: 12px;
+    margin-top: 20px;
+  }
+
+  .resume-button {
+    margin-top: 10px;
   }
 }
 
@@ -431,7 +440,7 @@
   }
 
   .panel-2 {
-    padding: 10px;
+    padding: 60px 10px 10px 10px;
   }
 
   .panel-5 {

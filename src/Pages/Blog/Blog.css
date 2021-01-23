@@ -1,0 +1,12 @@
+.blog-container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 60px;
+  min-height: 65vh;
+}
+
+@media only screen and (max-width: 640px) {
+  .blog-container {
+    padding: 40px 10px 60px 10px;
+  }
+}

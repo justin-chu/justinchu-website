@@ -39,11 +39,11 @@ function Navbar() {
             <li>
               <Link
                 to={{
-                  pathname: "/resume",
+                  pathname: "/blog",
                 }}
                 className="nav-links"
               >
-                Resume
+                Blog
               </Link>
             </li>
           </ul>
