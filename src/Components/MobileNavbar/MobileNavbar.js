@@ -1,63 +1,73 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Drawer from "@material-ui/core/Drawer";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 import { GoMail } from "react-icons/go";
+import { motion } from "framer-motion";
+import OutsideClickHandler from "react-outside-click-handler";
 import "./MobileNavbar.css";
 
 function MobileNavbar() {
   const [drawer, setDrawer] = React.useState(false);
+  const subMenuAnimate = {
+    enter: {
+      opacity: 1,
+      rotateX: 0,
+      transition: {
+        duration: 0.3,
+      },
+      display: "block",
+    },
+    exit: {
+      opacity: 0,
+      rotateX: -15,
+      transition: {
+        duration: 0.3,
+      },
+      transitionEnd: {
+        display: "none",
+      },
+    },
+  };
   return (
-    <nav className="nav-items" style={{ padding: "10px 20px" }}>
-      <Link to={{ pathname: "/" }} className="nav-logo">
-        <h5 style={{ fontWeight: 700 }} className="nav-logo">
-          Justin Chu
-        </h5>
-      </Link>
-      <button onClick={() => setDrawer(true)} className="icon-button">
-        <svg
-          height="22"
-          width="22"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
+    <OutsideClickHandler onOutsideClick={() => setDrawer(false)}>
+      <nav
+        className="nav-items mobile-nav"
+        style={{ position: "fixed", padding: "10px 20px" }}
+      >
+        <Link to={{ pathname: "/" }} className="nav-logo">
+          <h5 style={{ fontWeight: 700 }} className="nav-logo">
+            Justin Chu
+          </h5>
+        </Link>
+        <button onClick={() => setDrawer(!drawer)} className="icon-button">
+          <svg
+            height="22"
+            width="22"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            {!drawer ? (
+              <path
+                fillRule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clipRule="evenodd"
+              />
+            ) : (
+              <path
+                fillRule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            )}
+          </svg>
+        </button>
+        <motion.div
+          className="drawer"
+          initial={false}
+          animate={drawer ? "enter" : "exit"}
+          variants={subMenuAnimate}
         >
-          <path
-            fillRule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </button>
-      <Drawer anchor="top" open={drawer} onClose={() => setDrawer(false)}>
-        <div className="drawer">
-          <div className="top-container">
-            <Link
-              to={{ pathname: "/" }}
-              className="nav-logo"
-              style={{ margin: 0 }}
-              onClick={() => setDrawer(false)}
-            >
-              <h5 className="nav-logo" style={{ fontWeight: 700, margin: 0 }}>
-                Justin Chu
-              </h5>
-            </Link>
-            <button onClick={() => setDrawer(false)} className="icon-button">
-              <svg
-                height="22"
-                width="22"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
           <ul className="mobile-nav-menu">
             <Link
               to={{
@@ -113,9 +123,9 @@ function MobileNavbar() {
               />
             </a>
           </div>
-        </div>
-      </Drawer>
-    </nav>
+        </motion.div>
+      </nav>
+    </OutsideClickHandler>
   );
 }
 

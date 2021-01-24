@@ -1,7 +1,9 @@
 import React from "react";
 import "./About.css";
 import Code from "../../assets/images/code.svg";
-// import Anime from "react-anime";
+import { Helmet } from "react-helmet";
+import Typist from "react-typist";
+// import "dist/Typist.css";
 import Connect from "./Connect";
 import Skills from "./Skills";
 // import ResumeProjects from "./ResumeProjects";
@@ -26,10 +28,16 @@ const About = () => {
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
+      <Helmet>
+        <title>Justin Chu</title>
+        <meta name="description" content="Home" />
+      </Helmet>
       <div style={{ width: "100%", maxWidth: 1280, minHeight: "100vh" }}>
         <div className="panel-1">
           <div>
-            <h1 className="header">Hi, I'm Justin.</h1>
+            <h1 className="header">
+              <Typist cursor={{ show: false }}>Hi, I'm Justin!</Typist>
+            </h1>
             <p className="intro">
               I'm a second-year Computer Science student at the University of
               Waterloo who loves building websites and apps from front-end to

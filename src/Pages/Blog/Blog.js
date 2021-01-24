@@ -1,9 +1,14 @@
 import React from "react";
 import "./Blog.css";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
+      <Helmet>
+        <title>Blog - Justin Chu</title>
+        <meta name="description" content="Blog" />
+      </Helmet>
       <div className="blog-container">
         <h1
           className="sub-header"

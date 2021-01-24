@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
+import React, { useLayoutEffect } from "react";
+import { Route, Redirect, Switch, useLocation } from "react-router-dom";
 import About from "./About/About";
 import Portfolio from "./Portfolio/Portfolio";
 import Blog from "./Blog/Blog";
@@ -7,37 +7,14 @@ import PageNotFound from "./PageNotFound";
 import Navbar from "../Components/Navbar";
 
 const Main = () => {
-  const [slide, setSlide] = React.useState(0);
-  const [lastScrollY, setLastScrollY] = React.useState(0);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      // const { lastScrollY } = lastScrollY;
-      const currentScrollY = window.scrollY;
-      // console.log(currentScrollY, lastScrollY, slide);
-      if (currentScrollY > lastScrollY) {
-        setSlide(-48);
-      } else {
-        // console.log("asd");
-        setSlide(0);
-      }
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
+  let location = useLocation();
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
-    <BrowserRouter>
-      <Navbar
-        style={{
-          transform: `translate(0, ${slide}px)`,
-          transition: "transform 90ms linear",
-        }}
-      />
+    <>
+      <Navbar />
       <Switch>
         <Route exact path="/" render={() => <About />} />
         <Route exact path="/portfolio" render={() => <Portfolio />} />
@@ -51,7 +28,7 @@ const Main = () => {
       <div className="footer">
         <p>© Justin Chu 2021</p>
       </div>
-    </BrowserRouter>
+    </>
   );
 };
 

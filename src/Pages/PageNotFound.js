@@ -1,11 +1,16 @@
 import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const PageNotFound = () => {
   const history = useHistory();
   const handleOnClick = useCallback(() => history.push("/"), [history]);
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
+      <Helmet>
+        <title>404: Page Not Found - Justin Chu</title>
+        <meta name="description" content="404: Page Not Found" />
+      </Helmet>
       <div
         style={{
           width: "100%",
