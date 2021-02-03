@@ -1,3 +1,3 @@
 # www.justinchu.tech
 
-Developed with React, React Bootstrap, and Netlify.
+Developed with React, Tailwind CSS, and Framer Motion.
