@@ -39,9 +39,8 @@ const About = () => {
               <Typist cursor={{ show: false }}>Hi, I'm Justin!</Typist>
             </h1>
             <p className="intro">
-              I'm a second-year Computer Science student at the University of
-              Waterloo who loves building websites and apps from front-end to
-              back-end!
+              I'm a 3A Computer Science student at the University of
+              Waterloo with a passion for full-stack development and learning new technologies!
             </p>
             <div>
               <button className="button" onClick={() => ScrollToBottom()}>
