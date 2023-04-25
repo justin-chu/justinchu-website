@@ -1,5 +1,5 @@
 .portfolio-desc {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   font-size: 18px;
 }
 
@@ -8,6 +8,53 @@
   max-width: 1280px;
   padding: 60px;
   min-height: 100vh;
+}
+
+.work-experience-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.work-experience-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fcf8f5;
+  border-radius: 10px;
+  padding: 40px 40px;
+  margin-left: 10px;
+  width: 100%;
+}
+
+.work-experience-logo {
+  width: 100px;
+}
+
+.work-experience-text {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.work-experience-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: rgba(50, 89, 161, 0.2);
+  transition: all 1s ease;
+}
+
+.work-experience-button:hover {
+  filter: brightness(70%);
+  transition: all 1s ease;
+}
+
+.work-experience-button:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 .projects-container {
@@ -52,12 +99,6 @@
 .project-image-container {
   position: relative;
 }
-/* 
-.background {
-  background-image: url('https://upload.wikimedia.org/wikipedia/en/6/62/Kermit_the_Frog.jpg');
-  width: 200px;
-  height: 200px;
-} */
 
 .project-overlay {
   width: 100%;
