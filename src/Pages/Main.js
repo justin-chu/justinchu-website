@@ -26,7 +26,7 @@ const Main = () => {
       </Switch>
 
       <div className="footer">
-        <p>© Justin Chu 2021</p>
+        <p>© Justin Chu 2023</p>
       </div>
     </>
   );

@@ -3,10 +3,8 @@ import "./About.css";
 import Code from "../../assets/images/code.svg";
 import { Helmet } from "react-helmet";
 import Typist from "react-typist";
-// import "dist/Typist.css";
 import Connect from "./Connect";
 import Skills from "./Skills";
-// import ResumeProjects from "./ResumeProjects";
 
 const About = () => {
   function ScrollToBottom() {
@@ -36,10 +34,10 @@ const About = () => {
         <div className="panel-1">
           <div>
             <h1 className="header">
-              <Typist cursor={{ show: false }}>Hi, I'm Justin!</Typist>
+              <Typist cursor={{ show: true }} startDelay={1000}>Hi, I'm Justin!</Typist>
             </h1>
             <p className="intro">
-              I'm a 3A Computer Science student at the University of
+              I'm a 4th year Computer Science student at the University of
               Waterloo with a passion for full-stack development and learning new technologies!
             </p>
             <div>
@@ -80,7 +78,6 @@ const About = () => {
         </div>
         <div id="content">
           <Skills />
-          {/* <ResumeProjects /> */}
           <Connect />
         </div>
       </div>

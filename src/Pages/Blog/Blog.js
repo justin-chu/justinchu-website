@@ -6,7 +6,7 @@ const Blog = () => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <Helmet>
-        <title>Blog - Justin Chu</title>
+        <title>Justin Chu - Blog</title>
         <meta name="description" content="Blog" />
       </Helmet>
       <div className="blog-container">
