@@ -12,6 +12,7 @@
   overflow: hidden;
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: black;
 }
 
 .drawer {

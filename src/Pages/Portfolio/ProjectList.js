@@ -14,7 +14,13 @@ export const ProjectList = [
     title: "UWVision",
     description: <>Social platform used by <span style={{ color: "#DAA520" }}>1,000+</span> University of Waterloo students to share and discuss co-op insights</>,
     link: "https://www.uwvision.com/",
-    image: "devlyte.jpeg",
+    image: "uwvision.png",
+  },
+  {
+    title: "eARF Website",
+    description: <>Website developed for eARF: The Card Game</>,
+    link: "https://naughty-montalcini-4cff5b.netlify.app/",
+    image: "earf.png",
   },
   {
     title: "Harvest",
@@ -45,14 +51,8 @@ export const ProjectList = [
   {
     title: "DevLyte",
     description: <>Website for developers to share their favourite projects</>,
-    link: "https://www.devlyte.com/",
+    link: "https://github.com/justin-chu/DevLyte",
     image: "devlyte.jpeg",
-  },
-  {
-    title: "eARF Website",
-    description: <>Website developed for eARF: The Card Game</>,
-    link: "https://playearf.com/",
-    image: "earf.png",
   },
   {
     title: "Pathfinder",
@@ -63,8 +63,8 @@ export const ProjectList = [
   {
     title: "MIPS C++ Compiler",
     description: <>C++ compiler developed for CS 241 final project</>,
-    link: "https://www.devlyte.com/",
-    image: "devlyte.jpeg",
+    link: "",
+    image: "mips-compiler.jpeg",
   },
   {
     title: "Sorcery",
@@ -83,12 +83,6 @@ export const ProjectList = [
     description: <>Mobile app developed for UofTHacks VII</>,
     link: "https://github.com/CryogenicPlanet/UofTHacks-2020",
     image: "clothology.jpeg",
-  },
-  {
-    title: "Horizon",
-    description: <>Website built for CalgaryHacks 2021</>,
-    link: "https://www.devlyte.com/",
-    image: "devlyte.jpeg",
   },
   {
     title: "FRC Scouting App",
