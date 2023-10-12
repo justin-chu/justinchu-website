@@ -38,7 +38,7 @@ const About = () => {
             </h1>
             <p className="intro">
               I'm a 4th year Computer Science student at the University of
-              Waterloo with a passion for full-stack development and learning new technologies!
+              Waterloo with a passion for full-stack development. Currently, I'm working as a Software Engineering Intern at Tesla and have previously worked at Amazon, Spatial, and Arctic Wolf. I'm actively seeking new graduate roles for 2024 so please reach out to me with any exciting opportunities!
             </p>
             <div>
               <button className="button" onClick={() => ScrollToBottom()}>
